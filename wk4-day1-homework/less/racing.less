@@ -1,0 +1,129 @@
+// out: ../css/style.css
+
+// Import
+@import "colors";
+@import "fonts";
+
+// Mixins
+.full-width() {
+    width: 100%;
+    float: left;
+}
+
+.red-banner(@padding) {
+    .full-width();
+    color: @color-white;
+    text-align: center;
+    background-color: @color-red;
+    padding: @padding;
+}
+
+.big-red-text() {
+    .full-width();
+    font-size: 3em;
+    color: @color-red;
+    line-height: 75px;
+}
+
+* {
+    box-sizing: border-box !important;
+    transition: ease all 0.5s;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: @color-text;
+    font-size: 1em;
+    font-family: @font-body;
+    line-height: 1.80857;
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+// Nesting
+.about_main {
+
+    .collection_section {
+        .full-width();
+        margin-top: 40px;
+
+        .container {
+
+            .new_text {
+                .full-width();
+                font-size: 2em;
+                color: @color-dark;
+            }
+
+            .consectetur_text {
+                .full-width();
+                font-size: 1.2em;
+                color: @color-dark;
+                font-weight: 400;
+                margin-left: 0px;
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    // index.html spells this class "collectipn_section_3", so both spellings are styled
+    .collection_section_3,
+    .collectipn_section_3 {
+        .full-width();
+        padding-top: 0px;
+
+        .container {
+
+            .racing_shoes {
+                .full-width();
+                background-color: @color-gray;
+                height: auto;
+                padding-top: 70px;
+                background-size: 100%;
+                padding-bottom: 100px;
+                margin-bottom: 100px;
+
+                .shoes-img3 {
+                    .full-width();
+                    text-align: center;
+
+                    img {
+                        margin-top: 4em;
+                        width: 70%;
+                    }
+                }
+
+                .sale_text {
+                    .big-red-text();
+                }
+
+                .number_text {
+                    .big-red-text();
+                }
+
+                .seemore {
+                    width: 80%;
+                    height: 50px;
+                    color: @color-white;
+                    background-color: @color-red;
+                    font-size: 1.7em;
+                    margin-top: 35px;
+                }
+            }
+        }
+    }
+}
+
+.collection_text {
+    .red-banner(30px 0px);
+    font-family: @font-heading;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.copyright {
+    .red-banner(10px 0px);
+    font-size: 1em;
+    font-family: @font-body;
+}
